@@ -9,20 +9,18 @@ For real $y>0$, set
 $$
  W(t)=
  \begin{cases}
- 2(1-1/t) & 1<t\le2,\\
- 4/t-1 & 2<t<4,\\
+ 2(1-1/t) & 1 < t\le2,\\
+ 4/t-1 & 2 < t < 4,\\
  0 & \text{otherwise},
  \end{cases}
  \qquad
- P(y)=\sum_{y<p<4y}(\log p)W(p/y).
+ P(y)=\sum_{y < p < 4y}(\log p)W(p/y).
 $$
-
-
 
 Take the prime-power deficits $aD_\Lambda(y)+bD_\Lambda(2y)$ with positive coprime integers $a,b\le12$. Their prime weights remain nonnegative. On the zero side the extra factor is $a+b2^s$. Its root has modulus $a/b$ in the variable $2^s$, so a frequency in the open strip disappears exactly when $b<a<2b$. In that case the missing frequencies are
 
 $$
- s=\log_2(a/b)+i\,(2j+1)\pi/\log2,\quad j\in\mathbb Z.
+ s=\log_2(a/b)+i(2j+1)\pi/\log2,\quad j\in\mathbb Z.
 $$
 
 Among the 91 pairs, 22 have an interior zero of the multiplier, two have a boundary zero, and 67 have the extra root strictly outside. A blind frequency identifies where this method could hide a pole. Whether zeta has a zero at that frequency is a separate question. In the three-scale construction, canceling the constant and linear parts forces the polynomial in the dilation variable to be a multiple of $(z-1)(z-2)$. The coefficients are therefore unique up to scale. [Exact enumeration and arithmetic comparison](verify.py)
