@@ -5,7 +5,7 @@ abstract: "Exact classification of the strip zeros of two-tap positive dyadic fi
 authors:
   - family-names: Crossley
     given-names: Lee
-version: 1.0.3
+version: 1.0.4
 license: CC-BY-4.0
 repository-code: https://github.com/leecrossley/dyadic-filter-zeros
 type: software
