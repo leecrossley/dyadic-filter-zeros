@@ -37,4 +37,4 @@ bash verify-release.sh
 
 The command checks the release manifest, reruns the arithmetic, and compares its output with the recorded result.
 
-[Recorded verification output](evidence/check.txt) · [SHA-256 manifest](SHA256SUMS) · [Tagged publication](https://github.com/leecrossley/dyadic-filter-zeros/releases/tag/v1.0.0)
+[Recorded verification output](evidence/check.txt) · [SHA-256 manifest](SHA256SUMS) · [Tagged publication](https://github.com/leecrossley/dyadic-filter-zeros/releases/tag/v1.0.1)
