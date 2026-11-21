@@ -37,7 +37,7 @@ $$
 
 Take the prime-power deficits $aD_\Lambda(y)+bD_\Lambda(2y)$ with positive coprime integers $a,b\le12$. Their prime weights remain nonnegative. On the zero side the extra factor is $a+b2^s$. Its root has modulus $a/b$ in the variable $2^s$, so a frequency in the open strip disappears exactly when $b<a<2b$. The displayed frequencies follow by taking the modulus and argument of $2^s=-a/b$.
 
-A blind frequency identifies where a combination could hide a pole of $\zeta'/\zeta$. Whether zeta has a zero at that frequency is a separate question.
+A blind frequency identifies where a combination could hide a pole of $\zeta'/\zeta$. The calculation locates roots of the filter. The dyadic RH criterion uses the unfiltered tent, whose multiplier has no interior root. [Dyadic criterion](https://github.com/leecrossley/prime-window-rh-criterion)
 
 The tent-weighted sum $\sum_n\Lambda(n)W(n/y)$ is the three-scale combination $R(4y)-3R(2y)+2R(y)$ of ramps $R(y)=\sum_n\Lambda(n)(y/n-1)_+$, because $`W(t)=(4/t-1)_+-3(2/t-1)_++2(1/t-1)_+`$ for $t>0$. Cancelling the constant and linear parts forces the polynomial in the dilation variable to be a multiple of $(z-1)(z-2)$. The coefficients are therefore unique up to scale.
 
@@ -49,4 +49,4 @@ The classification is the written argument above. The executable uses exact inte
 bash verify-release.sh
 ```
 
-This checks the [SHA-256 manifest](SHA256SUMS), reruns the arithmetic and compares its output with the [recorded result](evidence/check.txt). It needs Python 3.9 or later and only the standard library. The recorded run used Python 3.9.6 on arm64 macOS. [Tagged publication](https://github.com/leecrossley/dyadic-filter-zeros/releases/tag/v1.0.2)
+This checks the [SHA-256 manifest](SHA256SUMS), reruns the arithmetic and compares its output with the [recorded result](evidence/check.txt). It needs Python 3.9 or later and only the standard library. The recorded run used Python 3.9.6 on arm64 macOS. [Latest release](https://github.com/leecrossley/dyadic-filter-zeros/releases/latest)
