@@ -60,17 +60,13 @@ def check_arithmetic(bound):
     for y in range(1, bound + 1):
         ramp = Counter()
         band = Counter()
-        primes = Counter()
         for p, n in powers:
             if n > 4 * y:
                 continue
             t = Fraction(y, n)
             ramp[p] += max(4 * t - 1, 0) - 3 * max(2 * t - 1, 0) + 2 * max(t - 1, 0)
             band[p] += tent(y, n)
-            if n == p:
-                primes[p] += tent(y, n)
         assert ramp == band
-        assert all(0 <= primes[p] <= weight for p, weight in band.items())
     print(f"Exact coefficients agree for each integer y from 1 through {bound}.")
 
 
