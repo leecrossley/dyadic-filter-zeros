@@ -1,40 +1,50 @@
 # Which positive dyadic filters can hide a frequency?
 
-For positive $a,b$, the additional multiplier $a+b2^s$ vanishes at a point of the open critical strip exactly when $b<a<2b$. Of the 91 coprime pairs $1\le a,b\le12$, exactly 22 have such a zero.
+The dyadic prime deficit can be combined at two scales, $aD_\Lambda(y)+bD_\Lambda(2y)$ with positive integers $a$ and $b$. Some combinations are blind to certain frequencies: the factor they introduce on the zero side, $a+b2^s$, vanishes at points of the critical strip, so a zeta zero there could go unseen. This repository says exactly when that happens. The factor has a zero in the open strip when $b<a<2b$, and in no other case.
 
-Here $D_\Lambda(y)=2y\log2-\sum_n\Lambda(n)W(n/y)$, with $\Lambda$ the von Mangoldt function and $W$ the dyadic tent.
+Of the 91 coprime pairs with $1\le a,b\le12$, 22 are blind in this way. That matters when such sums are used to detect zeros, because a blind combination could hide one.
 
-For real $y>0$, set
+## Statement
+
+For positive $a,b$, the additional multiplier $a+b2^s$ vanishes at a point of the open critical strip exactly when $b<a<2b$. In that case the missing frequencies are
+
+$$
+ s=\log_2(a/b)+i(2j+1)\pi/\log2,\quad j\in\mathbb Z.
+$$
+
+Among the 91 coprime pairs $1\le a,b\le12$:
+
+| Position of the extra root | Pairs |
+|---|---|
+| Inside the open strip, a blind frequency | 22 |
+| On a strip boundary | 2 |
+| Strictly outside the strip | 67 |
+
+Here $D_\Lambda(y)=2y\log2-\sum_n\Lambda(n)W(n/y)$ is the prime-power deficit, with $\Lambda$ the von Mangoldt function and $W$ the dyadic tent:
 
 $$
  W(t)=
  \begin{cases}
  2(1-1/t) & 1 < t\le2,\\
  4/t-1 & 2 < t < 4,\\
- 0 & \text{otherwise},
+ 0 & \text{otherwise}.
  \end{cases}
- \qquad
- P(y)=\sum_{y < p < 4y}(\log p)W(p/y).
 $$
 
-Take the prime-power deficits $aD_\Lambda(y)+bD_\Lambda(2y)$ with positive coprime integers $a,b\le12$. Their prime weights remain nonnegative. On the zero side the extra factor is $a+b2^s$. Its root has modulus $a/b$ in the variable $2^s$, so a frequency in the open strip disappears exactly when $b<a<2b$. In that case the missing frequencies are
+## Proof
 
-$$
- s=\log_2(a/b)+i(2j+1)\pi/\log2,\quad j\in\mathbb Z.
-$$
+Take the prime-power deficits $aD_\Lambda(y)+bD_\Lambda(2y)$ with positive coprime integers $a,b\le12$. Their prime weights remain nonnegative. On the zero side the extra factor is $a+b2^s$. Its root has modulus $a/b$ in the variable $2^s$, so a frequency in the open strip disappears exactly when $b<a<2b$. The displayed frequencies follow by taking the modulus and argument of $2^s=-a/b$.
 
-Among the 91 pairs, 22 have an interior zero of the multiplier, two have a boundary zero, and 67 have the extra root strictly outside. A blind frequency identifies where this method could hide a pole. Whether zeta has a zero at that frequency is a separate question. In the three-scale construction, canceling the constant and linear parts forces the polynomial in the dilation variable to be a multiple of $(z-1)(z-2)$. The coefficients are therefore unique up to scale. [Exact enumeration and arithmetic comparison](verify.py)
+A blind frequency identifies where a combination could hide a pole of $\zeta'/\zeta$. Whether zeta has a zero at that frequency is a separate question.
+
+The tent itself is the three-scale combination $R(4y)-3R(2y)+2R(y)$ of ramps $R(y)=\sum_n\Lambda(n)(y/n-1)_+$. Cancelling the constant and linear parts forces the polynomial in the dilation variable to be a multiple of $(z-1)(z-2)$. The coefficients are therefore unique up to scale.
 
 ## Verification
 
-The classification follows by taking the modulus and argument of $2^s=-a/b$. The finite count uses integer comparisons. Possible cancellation of a zeta pole at a particular frequency would additionally require a zeta zero there.
-
-The recorded run used Python 3.9.6 on arm64 macOS. The verifier requires Python 3.9 or later and uses only the standard library.
+The classification is the written argument above. The executable uses exact integer and rational arithmetic for two checks: it counts the 91 pairs by the criterion $b<a<2b$, and it confirms for each integer $y$ from 1 through 256 that the three-ramp combination reproduces the tent's coefficients. [Exact enumeration and arithmetic comparison](verify.py)
 
 ```sh
 bash verify-release.sh
 ```
 
-The command checks the release manifest, reruns the arithmetic, and compares its output with the recorded result.
-
-[Recorded verification output](evidence/check.txt) · [SHA-256 manifest](SHA256SUMS) · [Tagged publication](https://github.com/leecrossley/dyadic-filter-zeros/releases/tag/v1.0.0)
+This checks the [SHA-256 manifest](SHA256SUMS), reruns the arithmetic and compares its output with the [recorded result](evidence/check.txt). It needs Python 3.9 or later and only the standard library. The recorded run used Python 3.9.6 on arm64 macOS. [Tagged publication](https://github.com/leecrossley/dyadic-filter-zeros/releases/tag/v1.0.0)
