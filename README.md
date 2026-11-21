@@ -1,5 +1,7 @@
 # Which positive dyadic filters can hide a frequency?
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24410856.svg)](https://doi.org/10.5281/zenodo.24410856)
+
 The prime-power deficit of the dyadic tent can be combined at two scales, $aD_\Lambda(y)+bD_\Lambda(2y)$ with positive integers $a$ and $b$. Some combinations are blind to certain frequencies: the factor they introduce on the zero side, $a+b2^s$, vanishes at points of the critical strip, so a zeta zero there could go unseen. This repository says exactly when that happens. The factor has a zero in the open strip when $b<a<2b$, and in no other case.
 
 Of the 91 coprime pairs with $1\le a,b\le12$, 22 are blind in this way. That matters when such sums are used to detect zeros, because a blind combination could hide one.
